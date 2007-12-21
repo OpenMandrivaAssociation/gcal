@@ -13,6 +13,7 @@ Patch0:		gcal-fix-relative-symlinks.patch.bz2
 Patch1:		%{name}-3.01-misc.patch.bz2
 URL:		http://www.gnu.org/software/gcal/gcal.html
 BuildRequires:	ncurses-devel
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 Gcal is a program for printing calendars. Gcal displays a calendar for a month
