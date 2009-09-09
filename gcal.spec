@@ -1,6 +1,6 @@
 %define	name	gcal
 %define	version	3.01
-%define	release	%mkrel 12
+%define	release	%mkrel 13
 
 Summary:	Print calendars
 Name:		%{name}
