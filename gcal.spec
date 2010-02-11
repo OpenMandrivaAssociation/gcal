@@ -30,7 +30,7 @@ earth, moon phases in these cities, whole annual holidays, etc.
 %patch1 -p1
 
 %build
-%configure 
+%configure --with-included-regexps
 %make
 
 %install
