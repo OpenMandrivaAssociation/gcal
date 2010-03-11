@@ -1,12 +1,12 @@
 %define	name	gcal
-%define	version	3.01
-%define	release	%mkrel 13
+%define	version	3.01.1
+%define	release	%mkrel 1
 
 Summary:	Print calendars
 Name:		%{name}
 Version:	%{version}
 Release:	%{release}
-License:	GPL
+License:	GPLv2+
 Group:		Office
 Source0:	ftp://ftp.gnu.org/pub/gnu/gcal/%{name}-%{version}.tar.bz2
 Patch0:		gcal-fix-relative-symlinks.patch.bz2
