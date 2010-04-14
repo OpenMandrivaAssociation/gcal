@@ -1,16 +1,11 @@
-%define	name	gcal
-%define	version	3.01.1
-%define	release	%mkrel 1
-
 Summary:	Print calendars
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
-License:	GPLv2+
+Name:		gcal
+Version:	3.5.1
+Release:	%mkrel 1
+License:	GPLv3+
 Group:		Office
 Source0:	ftp://ftp.gnu.org/pub/gnu/gcal/%{name}-%{version}.tar.bz2
-Patch0:		gcal-fix-relative-symlinks.patch.bz2
-Patch1:		%{name}-3.01-misc.patch.bz2
+#Patch0:		gcal-fix-relative-symlinks.patch
 URL:		http://www.gnu.org/software/gcal/gcal.html
 BuildRequires:	ncurses-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -26,8 +21,7 @@ earth, moon phases in these cities, whole annual holidays, etc.
 
 %prep
 %setup -q
-%patch0 -p0
-%patch1 -p1
+#%patch0 -p0
 
 %build
 %configure --with-included-regexps
@@ -39,8 +33,6 @@ rm -rf $RPM_BUILD_ROOT
 perl -pi -e "s,$RPM_BUILD_ROOT,," $RPM_BUILD_ROOT/usr/share/gcal/misc/*/*
 
 mkdir -p $RPM_BUILD_ROOT%{_mandir}/de/man1
-install -m0644 doc/de/man/*.1 $RPM_BUILD_ROOT%{_mandir}/de/man1/
-
 rm -f $RPM_BUILD_ROOT%{_datadir}/locale/*.alias
 rm -f $RPM_BUILD_ROOT%{_infodir}/dir.texi*
 
@@ -57,10 +49,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(-,root,root,0755)
-%doc README LIMITATIONS COPYING ATTENTION HISTORY DISCLAIM
+%doc README COPYING AUTHORS NEWS THANKS 
 %{_bindir}/*
 %{_datadir}/gcal
 %{_infodir}/gcal*
-%{_mandir}/man1/*
-%lang(de) %{_mandir}/de/man1/*
 
