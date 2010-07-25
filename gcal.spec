@@ -1,12 +1,11 @@
 Summary:	Print calendars
 Name:		gcal
-Version:	3.5.1
+Version:	3.6
 Release:	%mkrel 1
 License:	GPLv3+
 Group:		Office
-Source0:	ftp://ftp.gnu.org/pub/gnu/gcal/%{name}-%{version}.tar.bz2
-#Patch0:		gcal-fix-relative-symlinks.patch
-URL:		http://www.gnu.org/software/gcal/gcal.html
+Source0:	ftp://ftp.gnu.org/pub/gnu/gcal/%{name}-%{version}.tar.gz
+URL:		http://www.gnu.org/software/gcal/
 BuildRequires:	ncurses-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
@@ -21,22 +20,19 @@ earth, moon phases in these cities, whole annual holidays, etc.
 
 %prep
 %setup -q
-#%patch0 -p0
 
 %build
-%configure --with-included-regexps
+%configure2_5x
 %make
 
 %install
-rm -rf $RPM_BUILD_ROOT
-%{makeinstall} mandir=$RPM_BUILD_ROOT%{_mandir}/man1
-perl -pi -e "s,$RPM_BUILD_ROOT,," $RPM_BUILD_ROOT/usr/share/gcal/misc/*/*
-
-mkdir -p $RPM_BUILD_ROOT%{_mandir}/de/man1
-rm -f $RPM_BUILD_ROOT%{_datadir}/locale/*.alias
-rm -f $RPM_BUILD_ROOT%{_infodir}/dir.texi*
+rm -rf %{buildroot}
+%makeinstall_std
 
 %find_lang %{name}
+
+#cleanup
+rm -rf %{buildroot}%{_datadir}/%{name}/{CREDITS,README,Makefile.in}
 
 %post
 %_install_info %{name}.info
@@ -45,12 +41,11 @@ rm -f $RPM_BUILD_ROOT%{_infodir}/dir.texi*
 %_remove_install_info %{name}.info
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %files -f %{name}.lang
 %defattr(-,root,root,0755)
-%doc README COPYING AUTHORS NEWS THANKS 
+%doc README BUGS LIMITATIONS TODO AUTHORS NEWS THANKS 
 %{_bindir}/*
 %{_datadir}/gcal
 %{_infodir}/gcal*
-
