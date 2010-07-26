@@ -1,7 +1,7 @@
 Summary:	Program for calculating and printing calendars
 Name:		gcal
 Version:	3.6
-Release:	%mkrel 1
+Release:	%mkrel 2
 License:	GPLv3+
 Group:		Office
 Source0:	ftp://ftp.gnu.org/pub/gnu/gcal/%{name}-%{version}.tar.gz
@@ -27,6 +27,8 @@ Islamic calendar, too.
 %prep
 %setup -q
 
+sed -i -e "s,ThisGcal=.*,ThisGcal=@PACKAGE@,g" misc/*/*.in
+
 %build
 %configure2_5x --disable-rpath MAKEINFO="makeinfo"
 %make
@@ -46,7 +48,13 @@ cp -rf doc/en/examples %{buildroot}%{_docdir}/%{name}/
 cp -rf misc %{buildroot}%{_docdir}/%{name}/
 
 #fix rights
-chmod 755 %{buildroot}%{_docdir}/%{name}/misc/gcalltx/gcalltx.pl
+chmod 644 %{buildroot}%{_docdir}/%{name}/misc/gcalltx/gcalltx.pl
+chmod 755 %{buildroot}%{_docdir}/%{name}/misc/wloc/wlocdrv
+
+for i in daily ddiff dst gcalltx moon mrms srss
+do
+  chmod 755 %{buildroot}%{_docdir}/%{name}/misc/$i/$i
+done
 
 #cleanup
 rm -rf %{buildroot}%{_datadir}/%{name}/{CREDITS,README}
