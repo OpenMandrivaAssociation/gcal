@@ -63,8 +63,6 @@ find %{buildroot}%{_docdir} -name "*.in" -exec rm -rf {} \;
 find %{buildroot}%{_docdir} -name "*.bat" -exec rm -rf {} \;
 find %{buildroot}%{_docdir} -name "*.texi" -exec rm -rf {} \;
 
-%post
-%_install_info %{name}.info
 
 %preun
 %_remove_install_info %{name}.info
