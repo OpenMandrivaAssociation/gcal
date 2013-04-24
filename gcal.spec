@@ -1,7 +1,7 @@
 Summary:	Program for calculating and printing calendars
 Name:		gcal
 Version:	3.6
-Release:	%mkrel 2
+Release:	3
 License:	GPLv3+
 Group:		Office
 Source0:	ftp://ftp.gnu.org/pub/gnu/gcal/%{name}-%{version}.tar.gz
