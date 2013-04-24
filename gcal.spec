@@ -64,8 +64,6 @@ find %{buildroot}%{_docdir} -name "*.bat" -exec rm -rf {} \;
 find %{buildroot}%{_docdir} -name "*.texi" -exec rm -rf {} \;
 
 
-%preun
-%_remove_install_info %{name}.info
 
 %clean
 rm -rf %{buildroot}
