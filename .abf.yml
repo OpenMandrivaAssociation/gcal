@@ -1,2 +1,4 @@
+removed_sources:
+  gcal-3.6.3.tar.gz: a5d68216d8b0735c9b095fb81a08d6dbf5cdeedd
 sources:
-  "gcal-3.6.tar.gz": 8aae14b37b1bf1aa752a99608a5909baf5aa30db
+  gcal-3.6.3.tar.xz: a5d68216d8b0735c9b095fb81a08d6dbf5cdeedd

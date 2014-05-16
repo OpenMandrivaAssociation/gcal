@@ -1,0 +1,21 @@
+diff -Naur gcal-3.6.3.orig/doc/en/gcal.texi gcal-3.6.3/doc/en/gcal.texi
+--- gcal-3.6.3.orig/doc/en/gcal.texi	2014-05-16 19:57:36.000000000 +0400
++++ gcal-3.6.3/doc/en/gcal.texi	2014-05-16 20:01:10.000000000 +0400
+@@ -18342,7 +18342,7 @@
+ Base time as time value in hours and minutes
+ in @w{@code{@var{hh}h@var{mm}'}} format
+ 
+-@itemx %o*t@var{@acronym{ISO}-6709:1983-co-ordinate}@r{[},@r{[}+@r{|}-@r{]}@var{mmmm}@r{|}@var{hh}:@r{[}@var{mm}@r{]]}
++@item %o*t@var{@acronym{ISO}-6709:1983-co-ordinate}@r{[},@r{[}+@r{|}-@r{]}@var{mmmm}@r{|}@var{hh}:@r{[}@var{mm}@r{]]}
+ @itemx %s*t@var{@acronym{ISO}-6709:1983-co-ordinate}@r{[},@r{[}+@r{|}-@r{]}@var{mmmm}@r{|}@var{hh}:@r{[}@var{mm}@r{]]}
+ @cindex Sun, base time @code{%o*t@var{argument}} special text
+ @cindex Sun, base time @code{%s*t@var{argument}} special text
+@@ -19502,7 +19502,7 @@
+ Base time as time value in hours and minutes
+ in @w{@code{@var{hh}h@var{mm}'}} format
+ 
+-@itemx %(*x@var{@acronym{ISO}-6709:1983-co-ordinate}@r{[},@r{[}+@r{|}-@r{]}@var{mmmm}@r{|}@var{hh}:@r{[}@var{mm}@r{]]}
++@item %(*x@var{@acronym{ISO}-6709:1983-co-ordinate}@r{[},@r{[}+@r{|}-@r{]}@var{mmmm}@r{|}@var{hh}:@r{[}@var{mm}@r{]]}
+ @itemx %)*x@var{@acronym{ISO}-6709:1983-co-ordinate}@r{[},@r{[}+@r{|}-@r{]}@var{mmmm}@r{|}@var{hh}:@r{[}@var{mm}@r{]]}
+ @cindex Moon, base time @code{%(*x@var{argument}} special text
+ @cindex Moon, base time @code{%)*x@var{argument}} special text
