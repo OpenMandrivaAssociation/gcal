@@ -7,7 +7,7 @@ License:	GPLv3+
 Group:		Office
 Source0:	ftp://ftp.gnu.org/pub/gnu/gcal/%{name}-%{version}.tar.xz
 Patch1:		gcal-3.6.3-texinfo.patch
-URL:		http://www.gnu.org/software/gcal/
+URL:		https://www.gnu.org/software/gcal/
 BuildRequires:	ncurses-devel
 BuildRequires:	texinfo
 
