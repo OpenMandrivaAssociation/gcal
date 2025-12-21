@@ -8,6 +8,11 @@ Group:		Office
 Source0:	ftp://ftp.gnu.org/pub/gnu/gcal/%{name}-%{version}.tar.xz
 Patch1:		gcal-3.6.3-texinfo.patch
 URL:		https://www.gnu.org/software/gcal/
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	ncurses-devel
 BuildRequires:	texinfo
 
